@@ -10,7 +10,7 @@ function App() {
   const [selectedPOC, setSelectedPOC] = useState<POCType>(null)
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-50">
       <AnimatePresence mode="wait">
         {!selectedPOC ? (
           <motion.div

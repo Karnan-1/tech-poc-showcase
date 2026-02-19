@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden px-6 pt-20 pb-16 text-center">
+    <section className="relative px-6 pt-24 pb-20 text-center">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -10,35 +10,30 @@ export default function Hero() {
         className="max-w-4xl mx-auto"
       >
         <motion.h1
-          className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight"
+          className="text-5xl md:text-6xl font-semibold text-gray-900 mb-4 tracking-tight"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.8 }}
         >
-          Tech POC Showcase
+          Solutions Showcase
         </motion.h1>
         <motion.p
-          className="text-xl md:text-2xl text-slate-300 mb-4"
+          className="text-lg md:text-xl text-gray-600 mb-2"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.8 }}
         >
-          Innovative Solutions for Modern Industries
+          Explore innovative proof-of-concept applications
         </motion.p>
         <motion.p
-          className="text-base md:text-lg text-slate-400 max-w-2xl mx-auto"
+          className="text-sm md:text-base text-gray-500 max-w-2xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.8 }}
         >
-          Explore cutting-edge proof-of-concept applications designed for healthcare, food & beverage, and retail sectors
+          Modern solutions for healthcare, dining, and retail industries
         </motion.p>
       </motion.div>
-
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute top-20 left-1/4 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl" />
-        <div className="absolute top-40 right-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl" />
-      </div>
     </section>
   )
 }
