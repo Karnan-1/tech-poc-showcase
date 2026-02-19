@@ -1,23 +1,33 @@
 import { useState } from 'react'
-import './App.css'
+import { motion, AnimatePresence } from 'framer-motion'
+import Hero from './components/Hero'
+import POCCards from './components/POCCards'
+import POCDetail from './components/POCDetail'
+
+export type POCType = 'hospital' | 'fnb' | 'retail' | null
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [selectedPOC, setSelectedPOC] = useState<POCType>(null)
 
   return (
-    <>
-      <div>
-        <h1>Tech POC Showcase</h1>
-      </div>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Modern interactive showcase for tech POCs
-        </p>
-      </div>
-    </>
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+      <AnimatePresence mode="wait">
+        {!selectedPOC ? (
+          <motion.div
+            key="main"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <Hero />
+            <POCCards onSelectPOC={setSelectedPOC} />
+          </motion.div>
+        ) : (
+          <POCDetail poc={selectedPOC} onBack={() => setSelectedPOC(null)} />
+        )}
+      </AnimatePresence>
+    </div>
   )
 }
 
